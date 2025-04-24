@@ -1,0 +1,37 @@
+export const config = {
+  apiKey: 'f29c74cc-fdb6-458e-97f2-383ae722bc87',
+  season: 72,  // Cambia este valor para otras temporadas
+  endpoint: 'https://cors-anywhere.herokuapp.com/https://api.tacticusgame.com/api/v1/guildRaid/',
+  userMapping: {
+    "Fulgrim": "0e8b72e9-202a-4c3c-9435-b46f70252e1e",
+    "Nasdrag": "9e46355a-30a8-4752-bd13-271ad995026e",
+    "CanadianShield": "2ab6d16d-5b03-4d5f-947a-c240adff2d5c",
+    "Lion": "bff933b6-9c6e-412f-af55-abbca9e02e97",
+    "Chris": "dc9b9125-e773-444a-9ec5-d8e47c4e5834",
+    "DornsHand": "7d189dd8-4e8f-45d8-aa10-328fb1e0644e",
+    "DisgruntledMonk": "c89246c5-cb79-41b0-b60a-23ede97f7f5f",
+    "Sororitas": "a21442f5-2808-416f-84cc-68518659c937",
+    "Polosven": "7e9e2c8c-88e7-4b3a-a895-314f8b83607e",
+    "BarabasDantioch": "7b46c258-c225-44e8-bf32-0cc44f024463",
+    "Sanguinius": "19ee5891-0149-42d4-ab34-50790bfb536f",
+    "CorvusCorax": "9d1f7861-11f7-46c7-8447-1c72ebcabc26",
+    "Omegon": "73ae8033-33e5-4f7a-86b9-53dc270c7f3a",
+    "Mortarion": "c64c90a9-d88d-4e29-9519-15f94e8eee2d",
+    "181": "069662e7-0364-4205-901c-fb2a70107e22",
+    "Mariojager": "26d437ef-2227-4fd5-abf3-70197cce4cbc",
+    "Abusador": "7d9570c7-fb93-4fd7-a0d0-4d8792e43b77",
+    "rogal": "61b64ba9-a5ea-4e60-b954-cb1f16ef7a0f",
+    "fsums": "e5da76ba-f728-4e84-b1fd-5bc0166f02c7",
+    "alpharius": "009587b8-12cd-415f-8c8c-bbf1cd6de9ee",
+    "jaghatai": "ac182b22-a09c-48f9-a5a2-45b8804acfba",
+    "Russ": "5a5fcad6-6f04-4d3d-b0b7-5a5e697fbb7c",
+    "LorgarTheFirst": "ba7ec308-87ba-4f8b-972a-65bbcca1f459",
+    "Angron": "a5488f0a-3d1f-44ba-9004-67f368e5d514",
+    "perturabo": "1dd4398d-9979-43f2-8dce-eeb7f7ca7644e",
+    "Shibal": "dbb22655-399c-4f0a-a73f-98eaf9ec24b2",
+    "MagnusTheRed": "9d673a46-42c2-47b9-b5f3-ee0d2de3b0b4",
+    "Vulkan": "9c38058d-008d-4f93-a50b-a805cce251e6",
+    "Guilliman": "4307982b-4e14-4409-af0f-4e96606774df",
+    "Horus": "5bddd679-d137-46f8-899c-606e07cc9f38"
+  }
+};

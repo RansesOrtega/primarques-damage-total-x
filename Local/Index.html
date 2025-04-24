@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Guild Raid Damage</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 1rem; }
+    .controls { margin-bottom: 1rem; }
+    .controls button { margin-left: 0.5rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem 1rem; }
+    th {
+      background-color: #f4f4f4;
+      text-align: left;
+      cursor: pointer;
+      user-select: none;
+    }
+    tr:nth-child(even) { background-color: #fafafa; }
+    th .arrow { font-size: 0.8em; margin-left: 0.2em; }
+  </style>
+</head>
+<body>
+  <h1>Guild Raid Season Damage</h1>
+
+  <div class="controls">
+    <label>
+      Season:
+      <input id="seasonInput" type="number" value="72" min="1" />
+    </label>
+    <button id="loadBtn">Load Data</button>
+    <button id="exportBtn">Export to Excel</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th id="thPlayer">Player<span class="arrow" id="arrowPlayer"></span></th>
+        <th id="thDamage">Total Damage<span class="arrow" id="arrowDamage"></span></th>
+      </tr>
+    </thead>
+    <tbody id="damageTableBody">
+      <tr><td colspan="3">Initializing...</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SheetJS library para creación de .xlsx -->
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
