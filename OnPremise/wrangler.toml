@@ -1,6 +1,5 @@
-name = "guild-raid-proxy"
+name = "primarques-damage-total-x"
 compatibility_date = "2025-04-24"
-type = "javascript"
 
 # Este es tu entry-point al Worker proxy
 main = "functions/guildRaid/[season].js"

@@ -1,19 +1,35 @@
-export async function onRequestGet({ params, env }) {
-    const season = params.season;
-    const API_KEY = env.API_KEY;            // vendrá de tus variables de entorno
-    const TARGET  = `https://api.tacticusgame.com/api/v1/guildRaid/${season}`;
+export default {
+    async fetch(request, env) {
+      // Extraemos la parte final de la ruta: /api/guildRaid/72 → "72"
+      const url = new URL(request.url);
+      const segments = url.pathname.split('/');
+      const season = segments[segments.length - 1];
   
-    const apiRes = await fetch(TARGET, {
-      headers: { 'X-API-KEY': API_KEY, 'season': season }
-    });
-    if (!apiRes.ok) {
-      return new Response(await apiRes.text(), {
-        status: apiRes.status
+      const API_KEY = env.API_KEY;
+      const TARGET  = `https://api.tacticusgame.com/api/v1/guildRaid/${season}`;
+  
+      // Hacemos la petición al API externo
+      const apiRes = await fetch(TARGET, {
+        headers: {
+          'X-API-KEY': API_KEY,
+          'season': season
+        }
+      });
+  
+      // Si falla, devolvemos el mismo status y cuerpo
+      if (!apiRes.ok) {
+        const text = await apiRes.text();
+        return new Response(text, {
+          status: apiRes.status,
+          headers: { 'content-type': apiRes.headers.get('content-type') || 'text/plain' }
+        });
+      }
+  
+      // En caso de éxito, reenviamos el JSON
+      const data = await apiRes.json();
+      return new Response(JSON.stringify(data), {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
       });
     }
-    const data = await apiRes.json();
-    return new Response(JSON.stringify(data), {
-      status: 200,
-      headers: { 'content-type': 'application/json' }
-    });
-  }
+  };
