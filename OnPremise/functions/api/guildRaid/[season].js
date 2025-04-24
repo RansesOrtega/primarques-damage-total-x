@@ -16,5 +16,4 @@ export async function onRequestGet({ params, env }) {
     status: 200,
     headers: { 'content-type': 'application/json' }
   });
-  
 }
