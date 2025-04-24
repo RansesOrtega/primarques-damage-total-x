@@ -29,7 +29,7 @@ export default {
         headers: { 'content-type': 'application/json' }
       });
         }
-        return env.__STATIC_CONTENT.fetch(request("index.html"));
+        return env.__STATIC_CONTENT.fetch(newRequest("index.html"));
      
     }
   };
