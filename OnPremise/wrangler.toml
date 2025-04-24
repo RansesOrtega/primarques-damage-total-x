@@ -2,7 +2,7 @@ name = "primarques-damage-total-x"
 compatibility_date = "2025-04-24"
 
 # Este es tu entry-point al Worker proxy
-main = "functions/api/guildRaid/[season].js"
+#main = "functions/api/guildRaid/[season].js"
 
 pages_build_output_dir = "OnPremise"
 
