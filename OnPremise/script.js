@@ -1,8 +1,5 @@
 import { config } from './config.js';
 
-// URL de tu proxy local
-const proxyBase = 'http://localhost:3000/guildRaid/';
-
 let dataRows = [];   // Array de { name, dmg }
 let currentSort = {  // Empieza ordenando por daño DESC
   column: 'damage',

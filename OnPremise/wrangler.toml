@@ -7,4 +7,4 @@ main = "functions/guildRaid/[season].js"
 
 # Si tienes assets (el frontend) en esa misma carpeta:
 [site]
-bucket = "primarques-damage-total-x/OnPremise"
+bucket = "."
