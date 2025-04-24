@@ -2,7 +2,7 @@ name = "primarques-damage-total-x"
 compatibility_date = "2025-04-24"
 
 # Este es tu entry-point al Worker proxy
-main = "functions/guildRaid/[season].js"
+main = "index.html"
 
 # Si tienes assets (el frontend) en esa misma carpeta:
 [site]
