@@ -7,3 +7,7 @@ main = "functions/guildRaid/[season].js"
 # Si tienes assets (el frontend) en esa misma carpeta:
 [site]
 bucket = "."
+
+[vars]
+API_KEY = "f29c74cc-fdb6-458e-97f2-383ae722bc87"
+DEFAULT_SEASON = "72"
