@@ -6,6 +6,8 @@ compatibility_date = "2025-04-24"
 
 pages_build_output_dir = "OnPremise"
 
+pages_functions_dir = "OnPremise/functions"
+
 # Si tienes assets (el frontend) en esa misma carpeta:
 #[site]
 #bucket = "."
