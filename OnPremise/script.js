@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadData(season) {
     tableBody.innerHTML = '<tr><td colspan="3">Cargando...</td></tr>';
     try {
-      const res = await fetch(`${proxyBase}${season}`);
+      const res = await fetch(`${config.endpoint}${season}`);
       if (!res.ok) throw new Error(`Error ${res.status}`);
       const { entries = [] } = await res.json();
 

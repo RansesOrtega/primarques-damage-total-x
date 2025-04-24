@@ -1,7 +1,7 @@
 export const config = {
   apiKey: 'f29c74cc-fdb6-458e-97f2-383ae722bc87',
   season: 72,  // Cambia este valor para otras temporadas
-  endpoint: 'https://cors-anywhere.herokuapp.com/https://api.tacticusgame.com/api/v1/guildRaid/',
+  endpoint: '/api/guildRaid/',
   userMapping: {
     "Fulgrim": "0e8b72e9-202a-4c3c-9435-b46f70252e1e",
     "Nasdrag": "9e46355a-30a8-4752-bd13-271ad995026e",
