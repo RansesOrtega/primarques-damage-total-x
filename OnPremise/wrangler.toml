@@ -1,0 +1,10 @@
+name = "guild-raid-proxy"
+compatibility_date = "2025-04-24"
+type = "javascript"
+
+# Este es tu entry-point al Worker proxy
+main = "OnPremise/functions/guildRaid/[season].js"
+
+# Si tienes assets (el frontend) en esa misma carpeta:
+[site]
+bucket = "primarques-damage-total-x/OnPremise"
