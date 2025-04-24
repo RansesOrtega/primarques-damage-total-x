@@ -1,12 +1,17 @@
 export default {
     async fetch(request, env) {
-      // Extraemos la parte final de la ruta: /api/guildRaid/72 → "72"
       const url = new URL(request.url);
-      const segments = url.pathname.split('/');
-      const season = segments[segments.length - 1];
+      const segments = url.pathname.split('/').filter(Boolean);
+      const season = segments.pop();
   
-      const API_KEY = env.API_KEY;
-      const TARGET  = `https://api.tacticusgame.com/api/v1/guildRaid/${season}`;
+      if (!season || isNaN(Number(season))) {
+        return new Response(
+          JSON.stringify({ error: 'Missing or invalid season parameter' }),
+          { status: 400, headers: { 'content-type': 'application/json' } }
+        );
+      }
+  
+      const TARGET = `https://api.tacticusgame.com/api/v1/guildRaid/${season}`;
   
       // Hacemos la petición al API externo
       const apiRes = await fetch(TARGET, {
