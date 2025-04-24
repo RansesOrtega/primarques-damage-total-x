@@ -8,7 +8,7 @@ pages_build_output_dir = "OnPremise"
 
 # Si tienes assets (el frontend) en esa misma carpeta:
 #[site]
-bucket = "."
+#bucket = "."
 
 [vars]
 API_KEY = "f29c74cc-fdb6-458e-97f2-383ae722bc87"
