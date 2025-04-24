@@ -3,7 +3,7 @@ export default {
       const url = new URL(request.url);
       const segments = url.pathname.split('/').filter(Boolean);
       const season = segments.pop();
-  
+      const API_KEY = env.API_KEY;
       if (!season || isNaN(Number(season))) {
         return new Response(
           JSON.stringify({ error: 'Missing or invalid season parameter' }),
