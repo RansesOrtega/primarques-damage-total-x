@@ -1,4 +1,4 @@
-import { config } from './OnPremise/config.js';
+import { config } from './config.js';
 
 let dataRows = [];   // Array de { name, dmg }
 let currentSort = {  // Empieza ordenando por daño DESC
