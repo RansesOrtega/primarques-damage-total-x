@@ -1,9 +1,11 @@
 import { config } from './config.js';
 
+const proxyBase = '/api/guildRaid'; 
+
 let dataRows = [];   // Array de { name, dmg }
 let currentSort = {  // Empieza ordenando por daño DESC
   column: 'damage',
-  asc: false
+  asc: true
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const thDamage    = document.getElementById('thDamage');
   const arrowPlayer = document.getElementById('arrowPlayer');
   const arrowDamage = document.getElementById('arrowDamage');
+
+  async function fetchSeason() {
+    const res = await fetch(proxyBase, { method: 'GET' });
+    if (!res.ok) throw new Error(`Error fetching season: ${res.status}`);
+    const json = await res.json();
+    return json.season;
+  }
+
 
   // Renderiza la tabla con posición, nombre y daño
   function renderTable() {
@@ -109,15 +119,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  async function init() {
+    try {
+      const season = await fetchSeason();
+      seasonInput.value = season;
+      await loadData(season);
+    } catch (err) {
+      console.error(err);
+      // Quizá mostrar un mensaje de error en la UI
+    }
+  }
+
   // Listeners
   loadBtn.addEventListener('click', () => {
-    const seasonVal = parseInt(seasonInput.value, 10) || config.season;
-    loadData(seasonVal);
+    const s = parseInt(seasonInput.value, 10) || config.season;
+    loadData(s);
   });
   exportBtn.addEventListener('click', exportToExcel);
   thPlayer.addEventListener('click', () => sortData('player'));
   thDamage.addEventListener('click', () => sortData('damage'));
 
   // Primera carga
-  loadData(config.season);
+  init();
 });

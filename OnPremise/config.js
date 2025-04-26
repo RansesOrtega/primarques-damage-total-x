@@ -32,6 +32,7 @@ export const config = {
     "MagnusTheRed": "9d673a46-42c2-47b9-b5f3-ee0d2de3b0b4",
     "Vulkan": "9c38058d-008d-4f93-a50b-a805cce251e6",
     "Guilliman": "4307982b-4e14-4409-af0f-4e96606774df",
-    "Horus": "5bddd679-d137-46f8-899c-606e07cc9f38"
+    "Horus": "5bddd679-d137-46f8-899c-606e07cc9f38",
+    "Konrad Kurze": "64b13924-e7ea-4751-9bd9-1f79a119452d"
   }
 };

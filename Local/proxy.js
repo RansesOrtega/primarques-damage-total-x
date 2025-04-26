@@ -1,33 +1,46 @@
-// proxy.js
+// proxy.js (Local Express proxy)
 import express from 'express';
-import cors    from 'cors';
-import fetch   from 'node-fetch';
+import cors from 'cors';
 
 const app = express();
-app.use(cors()); // añade Access-Control-Allow-Origin: *
+const PORT = process.env.PORT || 3000;
+
+// Permitir CORS
+app.use(cors());
 
 const API_KEY = 'f29c74cc-fdb6-458e-97f2-383ae722bc87';
-const TARGET  = 'https://api.tacticusgame.com/api/v1/guildRaid/';
+const BASE_URL = 'https://api.tacticusgame.com/api/v1/guildRaid';
 
-app.get('/guildRaid/:season', async (req, res) => {
-  const season = req.params.season;
+// 1) Endpoint sin parámetro: devuelve JSON completo con campo 'season'
+app.get('/api/guildRaid', async (req, res) => {
   try {
-    const apiRes = await fetch(`${TARGET}${season}`, {
-      headers: {
-        'X-API-KEY': API_KEY,
-        'season':    season
-      }
+    const apiRes = await fetch(BASE_URL, {
+      headers: { 'X-API-KEY': API_KEY }
     });
-    if (!apiRes.ok) {
-      return res.status(apiRes.status).send(await apiRes.text());
-    }
     const data = await apiRes.json();
-    res.json(data);
+    res.status(apiRes.status).json(data);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-app.listen(3000, () => {
-  console.log('Proxy corriendo en http://localhost:3000');
+// 2) Endpoint con parámetro season: proxy de datos específicos
+app.get('/api/guildRaid/:season', async (req, res) => {
+  const { season } = req.params;
+  try {
+    const apiRes = await fetch(`${BASE_URL}/${season}`, {
+      headers: {
+        'X-API-KEY': API_KEY,
+        'season': season
+      }
+    });
+    const data = await apiRes.json();
+    res.status(apiRes.status).json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Proxy server listening on http://localhost:${PORT}`);
 });
