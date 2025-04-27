@@ -96,6 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
     a.click();
     URL.revokeObjectURL(url);
   }
+  async function fetchSeason() {
+    const res = await fetch(proxyBase, { method: 'GET' });
+    if (!res.ok) throw new Error(`Error fetching season: ${res.status}`);
+    const json = await res.json();
+    return json.season;
+  }
 
   // Carga los datos del proxy y prepara dataRows
   async function loadData(season) {
