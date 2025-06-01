@@ -18,7 +18,7 @@ export const config = {
     "Omegon": "73ae8083-33e5-4f7a-86b9-53dc270c7f3a",
     "Mortarion": "c64c90a9-d88d-4e29-9519-15f94e8eee2d",
     "181": "069662e7-0364-4205-901c-fb2a70107e22",
-    "Azrael": "26d437ef-2227-4fd5-abf3-70197cce4cbc",
+    "Azrael": "bfdd0492-6487-4527-80d7-cb7db8575226",
     "Abusador": "7d9570c7-fb93-4fd7-a0d0-4d8792e43b77",
     "rogal": "61b64ba9-a5ea-4e60-b954-cb1f16ef7a0f",
     "fsums": "e5da76ba-f728-4e84-b1fd-5bc0166f02c7",
