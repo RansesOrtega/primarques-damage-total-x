@@ -23,7 +23,7 @@ export const config = {
     "rogal": "61b64ba9-a5ea-4e60-b954-cb1f16ef7a0f",
     "fsums": "e5da76ba-f728-4e84-b1fd-5bc0166f02c7",
     "alpharius": "0095878b-12cd-415f-88c8-bbf1cd6de9ee",
-    "jaghatai": "ac182b22-a09c-48f9-a5a2-45b8804acfba",
+    "BóbrKurwa": "31e30be2-8bb0-4607-8928-74e30bb053c7",
     "Russ": "5a5fca6d-6f04-4d3d-b0b7-5a5e69f7bbc7",
     "LorgarTheFirst": "ba7ec308-87ba-4f8b-972a-65bbcca1f459",
     "Angron": "a5488f0a-3d1f-44ba-9004-67f368e5d514",
