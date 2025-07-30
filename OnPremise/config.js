@@ -15,7 +15,7 @@ export const config = {
     "BarabasDantioch": "7b46c258-c225-44e8-bf32-0cc44f024463",
     "Sanguinius": "19ee5891-0149-42d4-ab34-50790bfb536f",
     "CorvusCorax": "9d1f7861-11f7-46c7-8447-1c72ebcabc26",
-    "Omegon": "73ae8083-33e5-4f7a-86b9-53dc270c7f3a",
+    "Ferrus": "bd90b958-9a23-44f9-a285-543bb8be5814",
     "Mortarion": "c64c90a9-d88d-4e29-9519-15f94e8eee2d",
     "181": "069662e7-0364-4205-901c-fb2a70107e22",
     "Azrael": "bfdd0492-6487-4527-80d7-cb7db8575226",
